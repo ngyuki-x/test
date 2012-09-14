@@ -1,0 +1,10 @@
+git ls-tree -l HEAD gh-pages | cut -f 3 -d ' '
+> 182a597599a9f15c9ad8895241409fa9a0e27101
+
+git log --format="%H" -n 1 gh-pages --
+> bf6a4c2c6e5c1442e36abc4bceb2af8880213006
+
+git commit-tree 182a597599a9f15c9ad8895241409fa9a0e27101 -p bf6a4c2c6e5c1442e36abc4bceb2af8880213006 -m pages
+> 5f02c26fd21aab8c64c3b69c2a34c7bab4830479
+
+echo 5f02c26fd21aab8c64c3b69c2a34c7bab4830479 > .git/refs/heads/gh-pages
